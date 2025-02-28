@@ -291,3 +291,7 @@ Press CTRL+C to quit
 192.168.1.25 - - [28/Feb/2025 10:01:33] "GET /static/css/styles.css HTTP/1.1" 304 -
 192.168.1.25 - - [28/Feb/2025 10:01:33] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
 192.168.1.25 - - [28/Feb/2025 10:01:33] "GET /static/uploads/Screenshot_20250130_191128-modified.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:27:09] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:27:09] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:27:09] "GET /static/uploads/Screenshot_20250130_191128-modified.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:27:09] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
