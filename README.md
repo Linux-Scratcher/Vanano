@@ -6,7 +6,7 @@ Clone repository
 Go in the folder
 `cd Vanano`<br>
 Install flask
-`sudo apt install flask`
+`sudo apt install flask`<br>
 Run
 `python3 app.py`<br>
 Go to url
