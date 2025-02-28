@@ -10,4 +10,4 @@ Install flask
 Run
 `python3 app.py`<br>
 Go to url
-`http://localhost:5051/`
+`http://localhost:5050/`
