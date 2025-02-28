@@ -5,7 +5,9 @@ Clone repository
 `git clone https://github.com/Linux-Scratcher/Vanano.git`<br>
 Go in the folder
 `cd Vanano`<br>
+Install flask
+`sudo apt install flask`
 Run
-`nohup python3 app.py`<br>
+`python3 app.py`<br>
 Go to url
 `http://localhost:5051/`
