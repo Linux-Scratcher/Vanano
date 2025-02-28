@@ -2,7 +2,7 @@
 Template for a simple social network.<br>
 # How to<br>
 Clone repository
-`gh repo clone Linux-Scratcher/Vanano`<br>
+`git clone https://github.com/Linux-Scratcher/Vanano.git`<br>
 Go in the folder
 `cd Vanano`<br>
 Run
