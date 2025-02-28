@@ -1,6 +1,6 @@
 # Vanano
-Template for a simple social network.
-<br># How to<br>
+Template for a simple social network.<br>
+# How to<br>
 Clone repository
 `git@github.com:Linux-Scratcher/Vanano.git`<br>
 Go in the folder
