@@ -1,0 +1,293 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/home/gianni/vanano/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, redirect, url_for
+  File "/usr/lib/python3/dist-packages/flask/__init__.py", line 5, in <module>
+    from .app import Flask as Flask
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 23, in <module>
+    from werkzeug.routing import BuildError
+  File "/usr/lib/python3/dist-packages/werkzeug/routing/__init__.py", line 123, in <module>
+    from .map import Map as Map
+  File "/usr/lib/python3/dist-packages/werkzeug/routing/map.py", line 41, in <module>
+    class Map:
+  File "/usr/lib/python3/dist-packages/werkzeug/routing/map.py", line 96, in Map
+    rules: t.Optional[t.Iterable["RuleFactory"]] = None,
+                      ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 341, in inner
+    return cached(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 1536, in __getitem__
+    params = tuple(_type_check(p, msg) for p in params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 1536, in <genexpr>
+    params = tuple(_type_check(p, msg) for p in params)
+
+KeyboardInterrupt
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.1.34:5050
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 865-899-231
+192.168.1.25 - - [27/Feb/2025 17:18:08] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:08] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:11] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:11] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:12] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:12] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:12] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:13] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:13] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:14] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:21] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [27/Feb/2025 17:18:21] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:21] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:21] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:26] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:26] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:38] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [27/Feb/2025 17:18:38] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:38] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:38] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:38] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:44] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:18:44] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:44] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:18:44] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:20:01] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:20:01] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:20:01] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:20:01] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:20:07] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:20:08] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:20:08] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:20:08] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:25:17] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:17] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:17] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:17] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:25] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:26] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:26] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:25:45] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [27/Feb/2025 17:25:45] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:45] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:25:45] "GET /static/uploads/index.html HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:25:45] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:25:46] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:26:35] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:26:35] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:26:35] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:26:35] "GET /static/uploads/index.html HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:26:35] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:15] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:27:15] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:15] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:27:15] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:15] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:18] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:27:18] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:18] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:27:18] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:18] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:54] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:27:54] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:27:54] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:27:54] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:27:54] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:28:34] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:28:34] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:28:34] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:34] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:34] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:40] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:28:40] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:28:40] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:40] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:40] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:50] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:28:50] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:28:50] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:50] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:50] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:28:55] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:28:55] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 17:29:03] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:07:12] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:07:13] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:07:13] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:07:13] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:07:13] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:07:13] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:09:25] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:09:25] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:09:25] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:09:25] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:09:25] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:09:25] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:09:30] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:09:30] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:09:30] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:36] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:10:36] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:10:36] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:36] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:36] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:10:36] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:38] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:10:38] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:10:38] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:38] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:38] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:38] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:10:39] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:10:39] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:10:40] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:40] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:40] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:10:40] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:13:59] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:13:59] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 304 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:14:05] "GET /static/uploads/items_12.svg HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:14:21] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:14:21] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:14:21] "GET /static/uploads/a16ed6ce0abaadc59805e7df2095745f.jpg HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:14:22] "GET /static/uploads/Screenshot_20250227_162418.png HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:14:22] "GET /static/uploads/items_12.svg HTTP/1.1" 200 -
+192.168.1.25 - - [27/Feb/2025 19:14:22] "GET /static/uploads/index.html HTTP/1.1" 404 -
+192.168.1.25 - - [27/Feb/2025 19:14:22] "GET /static/uploads/avatar_1735322635977.png HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/home/gianni/vanano/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, redirect, url_for
+  File "/usr/lib/python3/dist-packages/flask/__init__.py", line 5, in <module>
+    from .app import Flask as Flask
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 35, in <module>
+    from . import typing as ft
+  File "/usr/lib/python3/dist-packages/flask/typing.py", line 53, in <module>
+    BeforeRequestCallable = t.Union[
+                            ^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 341, in inner
+    return cached(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 463, in __getitem__
+    return self._getitem(self, parameters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 671, in Union
+    parameters = _remove_dups_flatten(parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/typing.py", line 311, in _remove_dups_flatten
+    params.append(p)
+KeyboardInterrupt
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/home/gianni/vanano/app.py", line 32, in <module>
+    app.run(debug=True)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1188, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 1059, in run_simple
+    application = DebuggedApplication(application, evalex=use_evalex)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/werkzeug/debug/__init__.py", line 291, in __init__
+    _log("warning", " * Debugger is active!")
+  File "/usr/lib/python3/dist-packages/werkzeug/_internal.py", line 222, in _log
+    _logger.addHandler(_ColorStreamHandler())
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/werkzeug/_internal.py", line 196, in __init__
+    import colorama
+  File "/usr/lib/python3/dist-packages/colorama/__init__.py", line 2, in <module>
+    from .initialise import init, deinit, reinit, colorama_text, just_fix_windows_console
+  File "/usr/lib/python3/dist-packages/colorama/initialise.py", line 6, in <module>
+    from .ansitowin32 import AnsiToWin32
+  File "/usr/lib/python3/dist-packages/colorama/ansitowin32.py", line 6, in <module>
+    from .ansi import AnsiFore, AnsiBack, AnsiStyle, Style, BEL
+  File "/usr/lib/python3/dist-packages/colorama/ansi.py", line 100, in <module>
+    Back   = AnsiBack()
+             ^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/colorama/ansi.py", line 31, in __init__
+    if not name.startswith('_'):
+           ^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.1.34:5050
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 929-414-535
+192.168.1.25 - - [28/Feb/2025 09:12:54] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:12:54] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:13:14] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:13:14] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:13:16] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:13:16] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:14:13] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:14:14] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:38:49] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:38:49] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:38:52] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:38:52] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:38:52] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.25 - - [28/Feb/2025 09:39:02] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [28/Feb/2025 09:39:02] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:39:02] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:39:02] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:39:31] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:39:31] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:39:31] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:39:36] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:39:36] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:39:36] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:43:33] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:43:33] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:43:33] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:44:14] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:44:14] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:44:14] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:47:19] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:53:11] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 09:53:11] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 09:53:11] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:00:28] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:00:29] "GET /static/css/styles.css HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:00:29] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:00:32] "GET /post HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:00:33] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:00:43] "POST /post HTTP/1.1" 302 -
+192.168.1.25 - - [28/Feb/2025 10:00:43] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:00:43] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:00:43] "GET /static/uploads/Screenshot_20250130_191128-modified.png HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:00:43] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:01:32] "GET / HTTP/1.1" 200 -
+192.168.1.25 - - [28/Feb/2025 10:01:33] "GET /static/css/styles.css HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:01:33] "GET /static/uploads/Screenshot_20250228_083144.png HTTP/1.1" 304 -
+192.168.1.25 - - [28/Feb/2025 10:01:33] "GET /static/uploads/Screenshot_20250130_191128-modified.png HTTP/1.1" 304 -

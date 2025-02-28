@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Créer un nouveau post</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="text">Texte :</label>
+            <textarea name="text" id="text" rows="4" cols="50"></textarea>
+            <label for="image">Image :</label>
+            <input type="file" name="image" id="image">
+            <input type="submit" value="Publier">
+        </form>
+    </div>
+</body>
+</html>
