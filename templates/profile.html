@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscription</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    h2, h1 {
+      margin-bottom: 20px;
+    }
+    form {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    input[type="text"], input[type="password"], input[type="file"] {
+      background-color: #2a2a2a;
+      color: white;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #43a047;
+    }
+    p {
+      margin-top: 10px;
+    }
+    a {
+      color: #4caf50;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .post {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    hr {
+      border: 1px solid #333;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px 0 20px 0;
+    }
+    .profile {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .profile img {
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Créer un compte</h2>
+  <form action="{{ url_for('register') }}" method="POST" enctype="multipart/form-data">
+    <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+    <input type="password" name="password" placeholder="Mot de passe" required>
+    <input type="file" name="profile_picture" accept="image/*">
+    <button type="submit">Créer un compte</button>
+  </form>
+
+  <p>Déjà inscrit ? <a href="{{ url_for('login') }}">Se connecter</a></p>
+
+  {% if user %}
+    <div class="profile">
+      <h1>Profil de {{ user[0] }}</h1>
+      <img src="{{ user.profile_picture_url or url_for('static', filename='default_profile.png') }}" alt="Photo de profil" class="profile-img">
+      <p>{{ user[1] or "Pas de bio" }}</p>
+      {% if session.username == user[0] %}
+        <a href="/modifier-profil">Modifier le profil</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <hr>
+
+  <h2>Posts récents</h2>
+  {% for post in posts %}
+    <div class="post">
+      <div class="user-info">
+        <img src="{{ post['profile_picture_url'] or url_for('static', filename='default_profile.png') }}" alt="Photo de {{ post['username'] }}" class="post-profile-pic">
+        <strong>{{ post.username }}</strong>
+      </div>
+      <p>{{ post.content }}</p>
+    </div>
+  {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche de comptes - Pynia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            background-color: #1e1e1e;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .no-results {
+            text-align: center;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recherche de comptes</h1>
+    <form method="get" action="{{ url_for('search') }}">
+        <input type="text" name="q" value="{{ query }}" placeholder="Entrer un pseudo..." required>
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if users %}
+        <ul>
+            {% for user in users %}
+                <li><a href="{{ url_for('view_profile', username=user[0]) }}">{{ user[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    {% elif query %}
+        <p class="no-results">Aucun utilisateur trouvé pour "{{ query }}"</p>
+    {% endif %}
+</body>
+</html>

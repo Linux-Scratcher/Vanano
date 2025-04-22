@@ -1,27 +1,256 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Vanano</title>
-	        <link rel="icon" type="image/vnd.icon" href="https://chat.linux-scratcher.fr/vanalogo.png">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pynia - Accueil</title>
+  <link rel="icon" type="image/png" href="https://tse1.mm.bing.net/th/id/OIP.011fDOptnduMGh-e6fduDAHaHa?pid=ImgDet&w=178&h=178&c=7&dpr=1,5" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #loading-text {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .led-bar {
+      width: 80%; height: 6px;
+      background: #222;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+    .led-bar::before {
+      content: "";
+      position: absolute;
+      height: 100%; width: 30%;
+      background: linear-gradient(90deg, #00f, #0ff, #00f);
+      animation: ledMove 1.2s linear infinite;
+    }
+    @keyframes ledMove {
+      0% { left: -30%; }
+      100% { left: 100%; }
+    }
+
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    header {
+      background-color: #1f1f1f;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a, header span {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .container {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      padding: 20px;
+    }
+    .container.visible {
+      opacity: 1;
+    }
+    .post {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #000;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .post:nth-child(even) { animation-delay: 0.1s; }
+    .post:nth-child(odd) { animation-delay: 0.2s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    img.post-image {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .author-info {
+      display: flex;
+      align-items: center;
+    }
+    .comment-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .comment-form input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+    }
+    .comment-form button {
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .comment-form button:hover {
+      background-color: #63b3ed;
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo-container img {
+      height: 120px;
+      background-color: black;
+      border-radius: 50%;
+      padding: 10px;
+      border: 2px solid white;
+    }
+  </style>
+  <script>
+    window.addEventListener("load", () => {
+      const loadingScreen = document.getElementById("loading-screen");
+      const container = document.querySelector(".container");
+      loadingScreen.style.display = "none";
+      container.classList.add("visible");
+    });
+
+    function postComment(event, postId) {
+      event.preventDefault();
+      const input = event.target.querySelector('input[name="comment"]');
+      const text = input.value;
+
+      fetch(`/api/comment/${postId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ comment_text: text })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) {
+          const commentDiv = document.createElement('div');
+          commentDiv.innerHTML = `<strong>${data.author}</strong> : ${data.text}`;
+          commentDiv.style.cssText = "padding: 8px; background: #2a2a2a; border-radius: 6px; margin-bottom: 5px;";
+          document.getElementById(`comments-${postId}`).appendChild(commentDiv);
+          input.value = '';
+        }
+      });
+    }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur Vanano</h1>
-        <a href="{{ url_for('post') }}">Créer un nouveau post</a>
+  <div id="loading-screen">
+    <div id="loading-text">Chargement du meilleur réseau social du monde</div>
+    <div class="led-bar"></div>
+  </div>
+
+  <header>
+    <div>
+      <a href="/">Accueil</a>
+      <a href="/search">Recherche</a>
+      <a href="/rec">Rec</a>
+    </div>
+    <div>
+      <span>Connecté en tant que <strong>{{ username }}</strong></span>
+      <a href="/logout">Déconnexion</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="logo-container">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.011fDOptnduMGh-e6fduDAHaHa?pid=ImgDet&w=178&h=178&c=7&dpr=1,5" alt="Logo Pynia">
+    </div>
+
+    <h1>Bienvenue {{ username }} !</h1>
+
+    <!-- Formulaire de modification de compte -->
+    <form method="POST" action="{{ url_for('modify_account') }}" style="margin-bottom: 30px; background: #1e1e1e; padding: 20px; border-radius: 10px;">
+      <label for="bio">Biographie :</label><br>
+      <textarea name="bio" id="bio" rows="4" style="width: 100%; margin-bottom: 10px;">{{ current_user.bio }}</textarea><br>
+
+      <label for="profile_picture_url">URL de l'image de profil :</label><br>
+      <input type="url" name="profile_picture_url" id="profile_picture_url" value="{{ current_user.profile_picture_url }}" style="width: 100%; margin-bottom: 10px;"><br>
+
+      <button type="submit" style="background-color: #1e90ff; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer;">Enregistrer</button>
+    </form>
+
+    {% for post in posts %}
+      <div class="post">
+        <div class="author-info">
+          <a href="/profil/{{ post.author }}">
+            <img src="{{ url_for('static', filename='profile_pics/' + (post.profile_picture or 'default.png')) }}" alt="photo de profil" class="profile-pic">
+          </a>
+          <strong>{{ post.author }}</strong>
+        </div>
+        <p>{{ post.text }}</p>
+        {% if post.image %}
+          <img src="{{ post.image }}" alt="Image du post" class="post-image">
+        {% endif %}
 
         <div>
-            {% for post in posts %}
-                <div class="post">
-                    <p>{{ post['text'] }}</p>
-                    {% if post['image'] %}
-                        <img src="{{ post['image'] }}" alt="Image du post">
-                    {% endif %}
-                </div>
+          <form class="comment-form" onsubmit="postComment(event, {{ post.id }})">
+            <input type="text" name="comment" placeholder="Ajouter un commentaire..." required>
+            <button type="submit">Envoyer</button>
+          </form>
+          <div id="comments-{{ post.id }}">
+            {% for comment in post.comments %}
+              <div style="padding: 8px; background: #2a2a2a; border-radius: 6px; margin-bottom: 5px;">
+                <strong>{{ comment.author }}</strong> : {{ comment.text }}
+              </div>
             {% endfor %}
+          </div>
         </div>
-    </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a href="/search" style="position: fixed; bottom: 20px; right: 20px; z-index: 100;">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="40" height="40" viewBox="0 0 24 24">
+      <path d="M21.707 20.293l-4.388-4.388A7.937 7.937 0 0018 10a8 8 0 10-8 8 7.937 7.937 0 005.905-2.681l4.388 4.388a1 1 0 001.414-1.414zM4 10a6 6 0 1112 0 6 6 0 01-12 0z"/>
+    </svg>
+  </a>
+
+  <a href="{{ url_for('rec_page') }}" style="position: fixed; bottom: 20px; left: 20px; z-index: 100;">
+    <button style="background-color: #1e90ff; color: white; border: none; padding: 12px 18px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+      🎬 Rec
+    </button>
+  </a>
 </body>
 </html>

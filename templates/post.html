@@ -1,21 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un post</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta charset="UTF-8">
+  <title>Créer un post - Pynia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    textarea, input[type="text"], input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: #2e2e2e;
+      color: white;
+    }
+    input[type="submit"] {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #1e90ff;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #1c7ed6;
+      transform: scale(1.02);
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #ccc;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Créer un nouveau post</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <label for="text">Texte :</label>
-            <textarea name="text" id="text" rows="4" cols="50"></textarea>
-            <label for="image">Image :</label>
-            <input type="file" name="image" id="image">
-            <input type="submit" value="Publier">
-        </form>
-    </div>
+  <div class="container">
+    <h1>Créer un nouveau post</h1>
+    <form action="{{ url_for('post') }}" method="post" enctype="multipart/form-data">
+      <label for="text">Texte du post :</label>
+      <textarea id="text" name="text" rows="5" required></textarea>
+
+      <label for="image">Image (facultatif) :</label>
+      <input type="file" id="image" name="image">
+
+      <input type="submit" value="Publier">
+    </form>
+    <a class="back-link" href="{{ url_for('index') }}">← Retour à l'accueil</a>
+  </div>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pynia - Vidéos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body style="background-color: #121212; color: white; font-family: Arial, sans-serif; padding: 20px;">
+  <h1>🎥 Vidéos publiées</h1>
+  <a href="{{ url_for('home') }}" style="color: #1e90ff;">← Retour à l'accueil</a>
+
+  {% for post in posts %}
+    <div class="post" style="margin-top: 20px; background-color: #1e1e1e; padding: 15px; border-radius: 10px;">
+      <h3>{{ post.author }}</h3>
+      <p>{{ post.text }}</p>
+      <video controls style="width: 100%; border-radius: 10px;">
+        <source src="{{ post.image }}" type="video/mp4"> <!-- ou webm -->
+        Votre navigateur ne prend pas en charge la vidéo.
+      </video>
+    </div>
+  {% else %}
+    <p>Aucune vidéo pour le moment.</p>
+  {% endfor %}
+</body>
+</html>
+
